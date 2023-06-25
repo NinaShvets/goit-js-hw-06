@@ -7,10 +7,13 @@ function onInputBlur() {
   const inputValue = inputEl.value;
 
   if (inputValue.length === Number(dataLength)) {
-    inputEl.classList.add('valid');
-    inputEl.classList.remove('invalid');
+    setInputClass('valid', 'invalid');
   } else {
-    inputEl.classList.remove('valid');
-    inputEl.classList.add('invalid');
+    setInputClass('invalid', 'valid');
   }
+}
+
+function setInputClass(classAdd, classRemove) {
+  inputEl.classList.add(classAdd);
+  inputEl.classList.remove(classRemove);
 }
